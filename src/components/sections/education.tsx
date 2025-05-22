@@ -69,7 +69,7 @@ export default function Education() {
       <div className="container mx-auto px-4">
         {/* Cabeçalho de seção */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="tag">Acelere seus estudos!</div>
+          <div className="tag">📚 Acelere seus estudos!</div>
           <h2 className="section-title mt-5 text-3xl md:text-5xl font-bold text-[#001E80]">
             Uma maneira mais eficaz de alavancar os seus estudos
           </h2>

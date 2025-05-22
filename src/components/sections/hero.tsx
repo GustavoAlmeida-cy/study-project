@@ -13,7 +13,7 @@ export const Hero = () => {
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
           {/* Texto */}
           <div className="w-full md:max-w-[550px] text-center md:text-left">
-            <div className="tag">Novidades aqui!</div>
+            <div className="tag">✨ Novidades aqui!</div>
             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
               Educação de qualidade ao seu alcance
             </h1>

@@ -36,7 +36,7 @@ export const About = () => {
 
           {/* Texto */}
           <div className="flex-1 text-center lg:text-left">
-            <div className="tag mb-4">Entenda nossa missão!</div>
+            <div className="tag mb-4">✌️ Entenda nossa missão!</div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
               Incentivo à educação de qualidade no Brasil
             </h1>
