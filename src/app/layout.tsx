@@ -25,10 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html
+      lang="pt-BR"
+      className="bg-[#EAEEFE] w-screen h-screen p-0 m-0 !overflow-x-clip"
+    >
       <body
         id="initial"
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#EAEEFE] w-109 sm:w-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#EAEEFE] top-0 left-0 min-h-screen absolute w-screen !overflow-x-clip`}
       >
         <ScrollTopButton />
         {children}

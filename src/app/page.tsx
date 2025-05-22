@@ -8,9 +8,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
-      <About />
-      <Education />
+      <main className="w-screen">
+        <div className="max-w-screen">
+          <Hero />
+          <About />
+          <Education />
+        </div>
+      </main>
       <Footer />
     </>
   );
