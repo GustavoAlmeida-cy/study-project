@@ -7,11 +7,13 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-black text-[#BCBCBC] text-sm py-10 text-center overflow-x-clip"
+      className="bg-black text-[#BCBCBC] text-sm py-10 text-center"
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-center items-center gap-10">
-          <div className="inline-flex relative before:content-[''] before:h-full before:w-full before:top-0 before:bottom-0 before:blur before:bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FD8FE)] before:absolute">
+        {/* Logo + Social */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10">
+          {/* Logo com efeito */}
+          <div className="relative inline-flex before:content-[''] before:absolute before:inset-0 before:blur before:bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FD8FE)]">
             <Link href="#initial">
               <Image
                 src={Logo}
@@ -22,15 +24,17 @@ export const Footer = () => {
               />
             </Link>
           </div>
-          <div className="inline-flex rounded-b-lg relative before:content-[''] before:h-full before:w-full before:top-0 before:bottom-0 before:blur before:bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FD8FE)] before:absolute">
+
+          {/* GitHub com efeito */}
+          <div className="relative inline-flex before:content-[''] before:absolute before:inset-0 before:blur before:bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FD8FE)] rounded-b-lg">
             <Link
               href="https://github.com/GustavoAlmeida-cy/study-project"
-              target="_black"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {" "}
               <Image
                 src={SocialGitHub}
-                alt="Menu"
+                alt="GitHub"
                 width={50}
                 height={50}
                 className="select-none cursor-pointer relative"
@@ -38,7 +42,9 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-        <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-8">
+
+        {/* Navegação */}
+        <nav className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mt-8 text-base">
           <Link
             className="hover:opacity-80 transition-opacity font-bold"
             href="#about"
@@ -58,7 +64,9 @@ export const Footer = () => {
             Mais informações
           </Link>
         </nav>
-        <p className="mt-6">
+
+        {/* Copyright */}
+        <p className="mt-6 text-xs sm:text-sm">
           &copy; 2025 Study, Inc. Todos os direitos reservados.
         </p>
       </div>

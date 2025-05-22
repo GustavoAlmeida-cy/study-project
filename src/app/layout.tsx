@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body
         id="initial"
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#EAEEFE]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#EAEEFE] w-109 sm:w-auto`}
       >
         <ScrollTopButton />
         {children}
