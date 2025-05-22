@@ -27,6 +27,14 @@ import {
 import { DataTableCompany } from "@/components/sections/data_table/company/data-table";
 import { getCompaniesData } from "@/data/companies-data";
 
+// * Data Table Courses
+import {
+  Course,
+  columnsCourses,
+} from "@/components/sections/data_table/course/columns";
+import { DataTableCourse } from "@/components/sections/data_table/course/data-table";
+import { getCoursesData } from "@/data/courses-data";
+
 export default function Education() {
   const [collegeData, setCollegeData] = useState<College[]>([]);
   const collegeColumns = columnsCollege;
@@ -34,9 +42,13 @@ export default function Education() {
   const [companyData, setCompanyData] = useState<Company[]>([]);
   const companyColumns = columnsCompanies;
 
+  const [CourseData, setCourseData] = useState<Course[]>([]);
+  const courseColumns = columnsCourses;
+
   useEffect(() => {
     getCollegesData().then((colleges) => setCollegeData(colleges));
     getCompaniesData().then((companies) => setCompanyData(companies));
+    getCoursesData().then((courses) => setCourseData(courses));
   }, []);
 
   const sectionRef = useRef(null);
@@ -130,7 +142,7 @@ export default function Education() {
           <TabsContent value="cursos" className="mt-8">
             <div className="w-full overflow-x-auto bg-transparent rounded-xl">
               <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)] text-center">
-                <p className="text-[#001E80]">Em breve...</p>
+                <DataTableCourse columns={courseColumns} data={CourseData} />
               </div>
             </div>
           </TabsContent>

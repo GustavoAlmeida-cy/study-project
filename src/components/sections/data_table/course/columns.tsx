@@ -1,68 +1,38 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-
 import { DataTableColumnHeader } from "@/components/sections/data_table/colum-header";
-import { Link as LinkIcon } from "lucide-react"; // renomeado para evitar conflito
+import { Link as LinkIcon } from "lucide-react";
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type College = {
+// Tipo atualizado
+export type Course = {
   id: string;
-  college: string;
-  type: "Estadual" | "Municipal";
-  cost: "Grátis" | "Pago";
-  students: string;
-  entrances: string;
+  institution: string;
+  course: string;
   quality: "⭐⭐⭐⭐⭐" | "⭐⭐⭐⭐" | "⭐⭐⭐" | "⭐⭐" | "⭐";
-  focus: string;
+  area: string;
   link: string;
 };
 
-export const columns: ColumnDef<College>[] = [
+export const columnsCourses: ColumnDef<Course>[] = [
   {
-    accessorKey: "college",
+    accessorKey: "institution",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Faculdade" />
+      <DataTableColumnHeader column={column} title="Instituição" />
     ),
     cell: ({ row }) => (
-      <div className="text-start font-medium">{row.getValue("college")}</div>
+      <div className="text-start font-medium">
+        {row.getValue("institution")}
+      </div>
     ),
   },
   {
-    accessorKey: "type",
+    accessorKey: "course",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Tipo" />
+      <DataTableColumnHeader column={column} title="Curso" />
     ),
     cell: ({ row }) => (
-      <div className="text-start font-medium">{row.getValue("type")}</div>
-    ),
-  },
-  {
-    accessorKey: "cost",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Custo" />
-    ),
-    cell: ({ row }) => (
-      <div className="text-start font-medium">{row.getValue("cost")}</div>
-    ),
-  },
-  {
-    accessorKey: "students",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Estudantes" />
-    ),
-    cell: ({ row }) => (
-      <div className="text-start font-medium">{row.getValue("students")}</div>
-    ),
-  },
-  {
-    accessorKey: "entrances",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Ingressão" />
-    ),
-    cell: ({ row }) => (
-      <div className="text-start font-medium">{row.getValue("entrances")}</div>
+      <div className="text-start font-medium">{row.getValue("course")}</div>
     ),
   },
   {
@@ -75,12 +45,12 @@ export const columns: ColumnDef<College>[] = [
     ),
   },
   {
-    accessorKey: "focus",
+    accessorKey: "area",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Foco" />
+      <DataTableColumnHeader column={column} title="Área de Atuação" />
     ),
     cell: ({ row }) => (
-      <div className="text-start font-medium">{row.getValue("focus")}</div>
+      <div className="text-start font-medium">{row.getValue("area")}</div>
     ),
   },
   {
