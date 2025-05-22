@@ -1,11 +1,36 @@
 "use client";
 
 import webStudyImage from "@/assets/study_web.svg";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
+
+// Utils
+import splitStringByRegex from "@/utils/split-string-by-regex";
+
+// Animation variables
+const charVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  reveal: {
+    opacity: 1,
+    transition: {
+      duration: 0.2, // mais lento
+      ease: [0.25, 0.1, 0.25, 1], // ease-out suave (custom bezier)
+    },
+  },
+};
+
+// Text variables
+const heading = "Incentivo à educação de qualidade no Brasil";
+const text =
+  "O Study é um projeto dedicado a promover uma educação acessível e de excelência. Nosso objetivo é conectar estudantes de todo o Brasil a cursos e instituições de ensino gratuitos, ampliando oportunidades e construindo futuros.";
 
 export const About = () => {
   const aboutRef = useRef(null);
+
+  const headingChars = splitStringByRegex(heading);
+  const textChars = splitStringByRegex(text);
 
   const { scrollYProgress } = useScroll({
     target: aboutRef,
@@ -37,15 +62,32 @@ export const About = () => {
           {/* Texto */}
           <div className="flex-1 text-center lg:text-left">
             <div className="tag mb-4">✌️ Entenda nossa missão!</div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
-              Incentivo à educação de qualidade no Brasil
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-[#010D3E] mt-6">
-              O Study é um projeto dedicado a promover uma educação acessível e
-              de excelência. Nosso objetivo é conectar estudantes de todo o
-              Brasil a cursos e instituições de ensino gratuitos, ampliando
-              oportunidades e construindo futuros.
-            </p>
+            <motion.h1
+              initial="hidden"
+              whileInView="reveal"
+              viewport={{ once: true }}
+              transition={{ staggerChildren: 0.015 }}
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
+            >
+              {headingChars.map((char, index) => (
+                <motion.span key={`${char}-${index}`} variants={charVariants}>
+                  {char}
+                </motion.span>
+              ))}
+            </motion.h1>
+            <motion.p
+              initial="hidden"
+              whileInView="reveal"
+              viewport={{ once: true }}
+              transition={{ staggerChildren: 0.01 }}
+              className="text-base sm:text-lg lg:text-xl text-[#010D3E] mt-6"
+            >
+              {textChars.map((char, index) => (
+                <motion.span key={`${char}-${index}`} variants={charVariants}>
+                  {char}
+                </motion.span>
+              ))}
+            </motion.p>
           </div>
         </div>
       </div>

@@ -5,8 +5,30 @@ import mansonImage from "@/assets/mason_1.svg";
 import bookImage from "@/assets/book_3.svg";
 
 // * Libs
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+
+// Utils
+import splitStringByRegex from "@/utils/split-string-by-regex";
+
+// Animation variables
+const charVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  reveal: {
+    opacity: 1,
+    transition: {
+      duration: 0.2, // mais lento
+      ease: [0.25, 0.1, 0.25, 1], // ease-out suave (custom bezier)
+    },
+  },
+};
+
+// Text variables
+const heading = "Uma maneira mais eficaz de alavancar os seus estudos";
+const text =
+  "Transforme sua busca por um curso gratuito ideal para você em apenas alguns minutos com esta seleção de faculdades, empresas e cursos gratuitos.";
 
 // * Tabs Components
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -36,6 +58,9 @@ import { DataTableCourse } from "@/components/sections/data_table/course/data-ta
 import { getCoursesData } from "@/data/courses-data";
 
 export default function Education() {
+  const headingChars = splitStringByRegex(heading);
+  const textChars = splitStringByRegex(text);
+
   const [collegeData, setCollegeData] = useState<College[]>([]);
   const collegeColumns = columnsCollege;
 
@@ -70,14 +95,32 @@ export default function Education() {
         {/* Cabeçalho de seção */}
         <div className="text-center max-w-3xl mx-auto">
           <div className="tag">📚 Acelere seus estudos!</div>
-          <h2 className="section-title mt-5 text-3xl md:text-5xl font-bold text-[#001E80]">
-            Uma maneira mais eficaz de alavancar os seus estudos
-          </h2>
-          <p className="section-description mt-5 text-lg md:text-xl text-[#010D3E]">
-            Transforme sua busca por um curso gratuito ideal para você em apenas
-            alguns minutos com esta seleção de faculdades, empresas e cursos
-            gratuitos.
-          </p>
+          <motion.h2
+            initial="hidden"
+            whileInView="reveal"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.015 }}
+            className="section-title mt-5 text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
+          >
+            {headingChars.map((char, index) => (
+              <motion.span key={`${char}-${index}`} variants={charVariants}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="reveal"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.01 }}
+            className="section-description mt-5 text-lg md:text-xl text-[#010D3E]"
+          >
+            {textChars.map((char, index) => (
+              <motion.span key={`${char}-${index}`} variants={charVariants}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.p>
         </div>
 
         {/* Imagens decorativas visíveis somente em telas lg+ */}
