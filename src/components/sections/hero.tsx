@@ -33,7 +33,7 @@ export const Hero = () => {
               alt="Book image"
               height={500}
               width={500}
-              className="select-none xl:absolute xl:h-full xl:w-auto xl:max-w-none lg:-left-40 xl:-top-8"
+              className="select-none xl:absolute xl:h-full xl:w-auto xl:max-w-none lg:-left-80 xl:-top-8"
               animate={{
                 translateY: [-30, 30],
               }}
