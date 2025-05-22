@@ -13,6 +13,9 @@ import { College, columns } from "@/components/sections/data_table/columns";
 import { DataTable } from "@/components/sections/data_table/data-table";
 import { getCollegesData } from "@/data/colleges-data";
 
+// * Tabs Components
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 export default function Education() {
   const [data, setData] = useState<College[]>([]);
 
@@ -64,19 +67,58 @@ export default function Education() {
             alt="Books image"
             height={150}
             width={150}
-            className="hidden lg:block select-none absolute -left-5 bottom-0"
+            className="hidden lg:block select-none absolute -left-5 bottom-20"
             style={{ translateY }}
           />
         </div>
-      </div>
 
-      {/* Tabela de dados */}
-      <div className="container mx-auto px-4 py-10">
-        <div className="w-full overflow-x-auto">
-          <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
-            <DataTable columns={columns} data={data} />
-          </div>
-        </div>
+        {/* Tabs com tabelas */}
+        <Tabs defaultValue="faculdades" className="w-full mt-10">
+          <TabsList className="flex flex-wrap justify-center gap-2 bg-[#EAEEFE] rounded-lg shadow p-2 h-12">
+            <TabsTrigger
+              value="faculdades"
+              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-4 rounded-md text-[#001E80] cursor-pointer hover:opacity-75 transition-opacity"
+            >
+              Faculdades
+            </TabsTrigger>
+            <TabsTrigger
+              value="empresas"
+              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-75 transition-opacity"
+            >
+              Empresas
+            </TabsTrigger>
+            <TabsTrigger
+              value="cursos"
+              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-75 transition-opacity"
+            >
+              Cursos Técnicos
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="faculdades" className="mt-8">
+            <div className="w-full overflow-x-auto bg-transparent rounded-xl">
+              <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
+                <DataTable columns={columns} data={data} />
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="empresas" className="mt-8">
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)] text-center">
+                <p className="text-[#001E80]">Em breve...</p>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="cursos" className="mt-8">
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)] text-center">
+                <p className="text-[#001E80]">Em breve...</p>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );
