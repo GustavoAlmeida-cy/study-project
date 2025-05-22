@@ -57,12 +57,6 @@ export const Footer = () => {
           >
             Cursos
           </Link>
-          <Link
-            className="hover:opacity-80 transition-opacity font-bold"
-            href="#footer"
-          >
-            Mais informações
-          </Link>
         </nav>
 
         {/* Copyright */}

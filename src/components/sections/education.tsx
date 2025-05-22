@@ -76,7 +76,7 @@ export default function Education() {
           <p className="section-description mt-5 text-lg md:text-xl text-[#010D3E]">
             Transforme sua busca por um curso gratuito ideal para você em apenas
             alguns minutos com esta seleção de faculdades, empresas e cursos
-            técnicos.
+            gratuitos.
           </p>
         </div>
 
