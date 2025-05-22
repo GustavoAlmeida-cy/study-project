@@ -1,4 +1,4 @@
-import { College } from "@/app/colleges/columns";
+import { College } from "@/components/sections/data_table/columns";
 
 export async function getCollegesData(): Promise<College[]> {
   return [
