@@ -1,6 +1,6 @@
-import { College } from "@/components/sections/data_table/college/columns";
+import { Courses } from "@/components/sections/data_table/course/columns";
 
-export async function getCollegesData(): Promise<College[]> {
+export async function getCoursesData(): Promise<Courses[]> {
   return [
     {
       id: "1",
