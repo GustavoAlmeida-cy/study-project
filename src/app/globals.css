@@ -125,11 +125,11 @@
 
 @layer components {
   .btn {
-    @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight cursor-pointer transition-all duration-200 ease-in-out hover:brightness-130 active:scale-95;
+    @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight cursor-pointer  duration-200 ease-in-out active:scale-95;
   }
 
   .btn-primary {
-    @apply bg-black text-white font-bold;
+    @apply bg-black text-white font-bold hover:scale-102;
   }
 
   .btn-text {

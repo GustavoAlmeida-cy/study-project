@@ -80,7 +80,7 @@ export const About = () => {
               whileInView="reveal"
               viewport={{ once: true }}
               transition={{ staggerChildren: 0.01 }}
-              className="text-base sm:text-lg lg:text-xl text-[#010D3E] mt-6"
+              className="text-base sm:text-lg lg:text-xl text-[#06103b] tracking-tight mt-6"
             >
               {textChars.map((char, index) => (
                 <motion.span key={`${char}-${index}`} variants={charVariants}>

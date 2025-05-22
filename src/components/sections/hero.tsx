@@ -57,7 +57,7 @@ export const Hero = () => {
               whileInView="reveal"
               viewport={{ once: true }}
               transition={{ staggerChildren: 0.01 }}
-              className="text-2xl text-[#010D3E] tracking-tight mt-6"
+              className="text-2xl text-[#e5e6f1] tracking-tight mt-6"
             >
               {textChars.map((char, index) => (
                 <motion.span key={`${char}-${index}`} variants={charVariants}>

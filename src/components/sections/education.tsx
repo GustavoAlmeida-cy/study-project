@@ -113,7 +113,7 @@ export default function Education() {
             whileInView="reveal"
             viewport={{ once: true }}
             transition={{ staggerChildren: 0.01 }}
-            className="section-description mt-5 text-lg md:text-xl text-[#010D3E]"
+            className="section-description mt-5 text-lg md:text-xl text-[#010D3E] tracking-tight"
           >
             {textChars.map((char, index) => (
               <motion.span key={`${char}-${index}`} variants={charVariants}>
@@ -148,19 +148,19 @@ export default function Education() {
           <TabsList className="flex flex-wrap justify-center gap-2 bg-[#EAEEFE] rounded-lg shadow p-2 h-12">
             <TabsTrigger
               value="faculdades"
-              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-4 rounded-md text-[#001E80] cursor-pointer hover:opacity-75 transition-opacity"
+              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-4 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
             >
               Faculdades
             </TabsTrigger>
             <TabsTrigger
               value="empresas"
-              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-75 transition-opacity"
+              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
             >
               Empresas
             </TabsTrigger>
             <TabsTrigger
               value="cursos"
-              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-75 transition-opacity"
+              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
             >
               Cursos
             </TabsTrigger>
