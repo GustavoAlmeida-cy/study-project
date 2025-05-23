@@ -8,23 +8,7 @@ import bookImage from "@/assets/book_3.svg";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
-// Utils
-import splitStringByRegex from "@/utils/split-string-by-regex";
-
 // Animation variables
-const charVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  reveal: {
-    opacity: 1,
-    transition: {
-      duration: 0.2, // mais lento
-      ease: [0.25, 0.1, 0.25, 1], // ease-out suave (custom bezier)
-    },
-  },
-};
-
 const fadeInVariants = (
   direction: "up" | "down" | "left" | "right" | "none",
   delay: number,
@@ -81,9 +65,6 @@ import { DataTableCourse } from "@/components/sections/data_table/course/data-ta
 import { getCoursesData } from "@/data/courses-data";
 
 export default function Education() {
-  const headingChars = splitStringByRegex(heading);
-  const textChars = splitStringByRegex(text);
-
   const [collegeData, setCollegeData] = useState<College[]>([]);
   const collegeColumns = columnsCollege;
 
@@ -127,30 +108,22 @@ export default function Education() {
             📚 Acelere seus estudos!
           </motion.div>
           <motion.h2
+            variants={fadeInVariants("left", 0.01, 0)}
             initial="hidden"
-            whileInView="reveal"
-            viewport={{ once: true }}
-            transition={{ staggerChildren: 0.015 }}
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.07 }}
             className="section-title mt-8 text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
           >
-            {headingChars.map((char, index) => (
-              <motion.span key={`${char}-${index}`} variants={charVariants}>
-                {char}
-              </motion.span>
-            ))}
+            {heading}
           </motion.h2>
           <motion.p
+            variants={fadeInVariants("right", 0.01, 0)}
             initial="hidden"
-            whileInView="reveal"
-            viewport={{ once: true }}
-            transition={{ staggerChildren: 0.01 }}
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.07 }}
             className="section-description mt-5 text-lg md:text-xl text-[#010D3E] tracking-tight"
           >
-            {textChars.map((char, index) => (
-              <motion.span key={`${char}-${index}`} variants={charVariants}>
-                {char}
-              </motion.span>
-            ))}
+            {text}
           </motion.p>
         </div>
 

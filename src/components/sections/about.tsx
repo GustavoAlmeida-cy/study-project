@@ -4,23 +4,7 @@ import webStudyImage from "@/assets/study_web.svg";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
-// Utils
-import splitStringByRegex from "@/utils/split-string-by-regex";
-
 // Animation variables
-const charVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  reveal: {
-    opacity: 1,
-    transition: {
-      duration: 0.2, // mais lento
-      ease: [0.25, 0.1, 0.25, 1], // ease-out suave (custom bezier)
-    },
-  },
-};
-
 const fadeInVariants = (
   direction: "up" | "down" | "left" | "right" | "none",
   delay: number,
@@ -52,9 +36,6 @@ const text =
 export const About = () => {
   const aboutRef = useRef(null);
 
-  const headingChars = splitStringByRegex(heading);
-  const textChars = splitStringByRegex(text);
-
   const { scrollYProgress } = useScroll({
     target: aboutRef,
     offset: ["start end", "end start"],
@@ -83,7 +64,7 @@ export const About = () => {
               alt="Web study image"
               width={400}
               height={400}
-              className="select-none absolute top-15 left-10 rotate-[-10deg]"
+              className="select-none absolute top-15 left-15 rotate-[-10deg]"
               style={{ translateY }}
             />
           </motion.div>
@@ -91,7 +72,7 @@ export const About = () => {
           {/* Texto */}
           <div className="flex-1 text-center lg:text-left">
             <motion.div
-              variants={fadeInVariants("down", 0.01, 0)}
+              variants={fadeInVariants("left", 0.01, 0)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.07 }}
@@ -100,30 +81,22 @@ export const About = () => {
               ✌️ Entenda nossa missão!
             </motion.div>
             <motion.h1
+              variants={fadeInVariants("down", 0.01, 0)}
               initial="hidden"
-              whileInView="reveal"
-              viewport={{ once: true }}
-              transition={{ staggerChildren: 0.015 }}
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.07 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
             >
-              {headingChars.map((char, index) => (
-                <motion.span key={`${char}-${index}`} variants={charVariants}>
-                  {char}
-                </motion.span>
-              ))}
+              {heading}
             </motion.h1>
             <motion.p
+              variants={fadeInVariants("right", 0.01, 0)}
               initial="hidden"
-              whileInView="reveal"
-              viewport={{ once: true }}
-              transition={{ staggerChildren: 0.01 }}
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.07 }}
               className="text-base sm:text-lg lg:text-xl text-[#06103b] tracking-tight mt-6"
             >
-              {textChars.map((char, index) => (
-                <motion.span key={`${char}-${index}`} variants={charVariants}>
-                  {char}
-                </motion.span>
-              ))}
+              {text}
             </motion.p>
           </div>
         </div>

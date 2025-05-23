@@ -2,18 +2,8 @@
 
 import { motion, Variants } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import Image from "next/image";
 import { highlightsData } from "@/data/highlights-data";
-import splitStringByRegex from "@/utils/split-string-by-regex";
-
-// Animação para caracteres individuais
-const charVariants: Variants = {
-  hidden: { opacity: 0 },
-  reveal: {
-    opacity: 1,
-    transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1] },
-  },
-};
+import Image from "next/image";
 
 // Animação de fade + direção
 const fadeInVariants = (
@@ -46,9 +36,6 @@ const text =
   "O Study conecta estudantes brasileiros às instituições e empresas que promovem uma educação gratuita, inclusiva e inovadora. Nosso compromisso é ampliar o acesso a oportunidades educacionais que moldam futuros e fortalecem o desenvolvimento do país.";
 
 export const Highlights = () => {
-  const headingChars = splitStringByRegex(heading);
-  const textChars = splitStringByRegex(text);
-
   return (
     <section
       id="highlights"
@@ -70,32 +57,24 @@ export const Highlights = () => {
 
           {/* Título animado */}
           <motion.h2
+            variants={fadeInVariants("right", 0.01, 0)}
             initial="hidden"
-            whileInView="reveal"
-            viewport={{ once: true }}
-            transition={{ staggerChildren: 0.015 }}
+            whileInView="show"
+            viewport={{ once: false, amount: 0.07 }}
             className="section-title mt-8 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
           >
-            {headingChars.map((char, index) => (
-              <motion.span key={`${char}-${index}`} variants={charVariants}>
-                {char}
-              </motion.span>
-            ))}
+            {heading}
           </motion.h2>
 
           {/* Parágrafo animado */}
           <motion.p
+            variants={fadeInVariants("left", 0.01, 0)}
             initial="hidden"
-            whileInView="reveal"
-            viewport={{ once: true }}
-            transition={{ staggerChildren: 0.01 }}
+            whileInView="show"
+            viewport={{ once: false, amount: 0.07 }}
             className="section-description mt-5 text-base sm:text-lg md:text-xl text-[#010D3E] tracking-tight leading-relaxed"
           >
-            {textChars.map((char, index) => (
-              <motion.span key={`${char}-${index}`} variants={charVariants}>
-                {char}
-              </motion.span>
-            ))}
+            {text}
           </motion.p>
         </div>
 

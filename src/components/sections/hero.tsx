@@ -3,26 +3,10 @@
 // Assets
 import bookImage from "@/assets/book_2.svg";
 
-// Utils
-import splitStringByRegex from "@/utils/split-string-by-regex";
-
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
 // Animation variables
-const charVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  reveal: {
-    opacity: 1,
-    transition: {
-      duration: 0.2,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
-  },
-};
-
 const fadeInVariants = (
   direction: "up" | "down" | "left" | "right" | "none",
   delay: number,
@@ -52,11 +36,8 @@ const text =
   "Descubra cursos gratuitos de alta qualidade, para transformar sua jornada de aprendizado e abrir portas para novas oportunidades.";
 
 export const Hero = () => {
-  const headingChars = splitStringByRegex(heading);
-  const textChars = splitStringByRegex(text);
-
   return (
-    <section className="pt-8 pb-20 md:pt-0 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#1832FF,#EAEEFE)] overflow-x-clip">
+    <section className="pt-8 pb-10 md:pt-0 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#1832FF,#EAEEFE)] overflow-x-clip">
       <div className="container mx-auto px-4">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
           {/* Texto */}
@@ -71,30 +52,22 @@ export const Hero = () => {
               ✨ Novidades aqui!
             </motion.div>
             <motion.h1
+              variants={fadeInVariants("left", 0.01, 0)}
               initial="hidden"
-              whileInView="reveal"
-              viewport={{ once: true }}
-              transition={{ staggerChildren: 0.015 }}
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.07 }}
               className="text-5xl md:text-8xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6"
             >
-              {headingChars.map((char, index) => (
-                <motion.span key={`${char}-${index}`} variants={charVariants}>
-                  {char}
-                </motion.span>
-              ))}
+              {heading}
             </motion.h1>
             <motion.p
+              variants={fadeInVariants("right", 0.01, 0)}
               initial="hidden"
-              whileInView="reveal"
-              viewport={{ once: true }}
-              transition={{ staggerChildren: 0.01 }}
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.07 }}
               className="text-2xl text-[#e5e6f1] tracking-tight mt-6"
             >
-              {textChars.map((char, index) => (
-                <motion.span key={`${char}-${index}`} variants={charVariants}>
-                  {char}
-                </motion.span>
-              ))}
+              {text}
             </motion.p>
             <motion.div
               variants={fadeInVariants("left", 0.01, 0)}
