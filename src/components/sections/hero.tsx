@@ -65,7 +65,9 @@ export const Hero = () => {
               </p>
               <div className="flex justify-center md:justify-start mt-8">
                 <Link href="#education">
-                  <button className="btn btn-primary">Comece agora</button>
+                  <button className="btn btn-primary p-3 text-2xl">
+                    Comece agora
+                  </button>
                 </Link>
               </div>
             </motion.div>
