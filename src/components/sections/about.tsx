@@ -66,7 +66,7 @@ export const About = () => {
     <section
       id="about"
       ref={aboutRef}
-      className="pt-12 pb-20 bg-[radial-gradient(ellipse_200%_100%_at_top_left,#1832FF,#EAEEFE)] overflow-x-clip"
+      className="pt-12 pb-2 bg-[radial-gradient(ellipse_200%_100%_at_top_left,#1832FF,#EAEEFE)] overflow-x-clip"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
