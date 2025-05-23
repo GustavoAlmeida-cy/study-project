@@ -17,11 +17,34 @@ const charVariants: Variants = {
   reveal: {
     opacity: 1,
     transition: {
-      duration: 0.2, // mais lento
-      ease: [0.25, 0.1, 0.25, 1], // ease-out suave (custom bezier)
+      duration: 0.2,
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
+
+const fadeInVariants = (
+  direction: "up" | "down" | "left" | "right" | "none",
+  delay: number,
+  opacity: number
+): Variants => ({
+  hidden: {
+    opacity: opacity,
+    y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+    x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+  },
+  show: {
+    y: 0,
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      duration: 1.2,
+      delay: delay,
+      ease: [0.25, 0.25, 0.25, 0.75],
+    },
+  },
+});
 
 // Text variables
 const heading = "Educação de qualidade ao seu alcance";
@@ -38,7 +61,15 @@ export const Hero = () => {
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
           {/* Texto */}
           <div className="w-full md:max-w-[550px] text-center md:text-left">
-            <div className="tag">✨ Novidades aqui!</div>
+            <motion.div
+              variants={fadeInVariants("right", 0.01, 0)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.07 }}
+              className="tag"
+            >
+              ✨ Novidades aqui!
+            </motion.div>
             <motion.h1
               initial="hidden"
               whileInView="reveal"
@@ -65,15 +96,27 @@ export const Hero = () => {
                 </motion.span>
               ))}
             </motion.p>
-            <div className="flex justify-center md:justify-start mt-8">
+            <motion.div
+              variants={fadeInVariants("left", 0.01, 0)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: true, amount: 0.07 }}
+              className="flex justify-center md:justify-start mt-8"
+            >
               <Link href="#education">
                 <button className="btn btn-primary">Comece agora</button>
               </Link>
-            </div>
+            </motion.div>
           </div>
 
           {/* Imagem (oculta em telas pequenas) */}
-          <div className="hidden md:block w-full max-w-[500px] mx-auto md:mx-0 mt-10 md:mt-0">
+          <motion.div
+            variants={fadeInVariants("up", 0.01, 0)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.07 }}
+            className="hidden md:block w-full max-w-[500px] mx-auto md:mx-0 mt-10 md:mt-0"
+          >
             <motion.img
               src={bookImage.src}
               alt="Book image"
@@ -86,7 +129,7 @@ export const Hero = () => {
                 ease: "easeInOut",
               }}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

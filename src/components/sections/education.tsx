@@ -25,6 +25,29 @@ const charVariants: Variants = {
   },
 };
 
+const fadeInVariants = (
+  direction: "up" | "down" | "left" | "right" | "none",
+  delay: number,
+  opacity: number
+): Variants => ({
+  hidden: {
+    opacity: opacity,
+    y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+    x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+  },
+  show: {
+    y: 0,
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      duration: 1.2,
+      delay: delay,
+      ease: [0.25, 0.25, 0.25, 0.75],
+    },
+  },
+});
+
 // Text variables
 const heading = "Uma maneira mais eficaz de alavancar os seus estudos";
 const text =
@@ -94,13 +117,21 @@ export default function Education() {
       <div className="container mx-auto px-4">
         {/* Cabeçalho de seção */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="tag">📚 Acelere seus estudos!</div>
+          <motion.div
+            variants={fadeInVariants("up", 0.01, 0)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.07 }}
+            className="tag"
+          >
+            📚 Acelere seus estudos!
+          </motion.div>
           <motion.h2
             initial="hidden"
             whileInView="reveal"
             viewport={{ once: true }}
             transition={{ staggerChildren: 0.015 }}
-            className="section-title mt-5 text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
+            className="section-title mt-8 text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
           >
             {headingChars.map((char, index) => (
               <motion.span key={`${char}-${index}`} variants={charVariants}>
@@ -124,7 +155,13 @@ export default function Education() {
         </div>
 
         {/* Imagens decorativas visíveis somente em telas lg+ */}
-        <div className="relative my-12">
+        <motion.div
+          variants={fadeInVariants("down", 0.01, 0)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.07 }}
+          className="relative my-12"
+        >
           <motion.img
             src={mansonImage.src}
             alt="Manson image"
@@ -141,55 +178,68 @@ export default function Education() {
             className="hidden lg:block select-none absolute -left-5 bottom-20"
             style={{ translateY }}
           />
-        </div>
+        </motion.div>
 
         {/* Tabs com tabelas */}
-        <Tabs defaultValue="faculdades" className="w-full mt-10">
-          <TabsList className="flex flex-wrap justify-center gap-2 bg-[#EAEEFE] rounded-lg shadow p-2 h-12">
-            <TabsTrigger
-              value="faculdades"
-              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-4 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
-            >
-              Faculdades
-            </TabsTrigger>
-            <TabsTrigger
-              value="empresas"
-              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
-            >
-              Empresas
-            </TabsTrigger>
-            <TabsTrigger
-              value="cursos"
-              className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
-            >
-              Cursos
-            </TabsTrigger>
-          </TabsList>
+        <motion.div
+          variants={fadeInVariants("right", 0.01, 0)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.07 }}
+        >
+          <Tabs defaultValue="faculdades" className="w-full mt-10">
+            <TabsList className="flex flex-wrap justify-center gap-2 bg-[#EAEEFE] rounded-lg shadow p-2 h-12">
+              <TabsTrigger
+                value="faculdades"
+                className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-4 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
+              >
+                Faculdades
+              </TabsTrigger>
+              <TabsTrigger
+                value="empresas"
+                className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
+              >
+                Empresas
+              </TabsTrigger>
+              <TabsTrigger
+                value="cursos"
+                className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
+              >
+                Cursos
+              </TabsTrigger>
+            </TabsList>
 
-          <TabsContent value="faculdades" className="mt-8">
-            <div className="w-full overflow-x-auto bg-transparent rounded-xl">
-              <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
-                <DataTableCollege columns={collegeColumns} data={collegeData} />
+            <TabsContent value="faculdades" className="mt-8">
+              <div className="w-full overflow-x-auto bg-transparent rounded-xl">
+                <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
+                  <DataTableCollege
+                    columns={collegeColumns}
+                    data={collegeData}
+                  />
+                </div>
               </div>
-            </div>
-          </TabsContent>
+            </TabsContent>
 
-          <TabsContent value="empresas" className="mt-8">
-            <div className="w-full overflow-x-auto bg-transparent rounded-xl">
-              <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
-                <DataTableCompany columns={companyColumns} data={companyData} />
+            <TabsContent value="empresas" className="mt-8">
+              <div className="w-full overflow-x-auto bg-transparent rounded-xl">
+                <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
+                  <DataTableCompany
+                    columns={companyColumns}
+                    data={companyData}
+                  />
+                </div>
               </div>
-            </div>
-          </TabsContent>
+            </TabsContent>
 
-          <TabsContent value="cursos" className="mt-8">
-            <div className="w-full overflow-x-auto bg-transparent rounded-xl">
-              <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)] text-center">
-                <DataTableCourse columns={courseColumns} data={CourseData} />
+            <TabsContent value="cursos" className="mt-8">
+              <div className="w-full overflow-x-auto bg-transparent rounded-xl">
+                <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)] text-center">
+                  <DataTableCourse columns={courseColumns} data={CourseData} />
+                </div>
               </div>
-            </div>
-          </TabsContent>
-        </Tabs>
+            </TabsContent>
+          </Tabs>
+        </motion.div>
       </div>
     </section>
   );

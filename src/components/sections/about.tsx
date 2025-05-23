@@ -21,6 +21,29 @@ const charVariants: Variants = {
   },
 };
 
+const fadeInVariants = (
+  direction: "up" | "down" | "left" | "right" | "none",
+  delay: number,
+  opacity: number
+): Variants => ({
+  hidden: {
+    opacity: opacity,
+    y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+    x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+  },
+  show: {
+    y: 0,
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      duration: 1.2,
+      delay: delay,
+      ease: [0.25, 0.25, 0.25, 0.75],
+    },
+  },
+});
+
 // Text variables
 const heading = "Incentivo à educação de qualidade no Brasil";
 const text =
@@ -48,7 +71,13 @@ export const About = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Imagem decorativa */}
-          <div className="hidden lg:flex flex-1 justify-center relative h-[400px] lg:h-[500px]">
+          <motion.div
+            variants={fadeInVariants("left", 0.01, 0)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.07 }}
+            className="hidden lg:flex flex-1 justify-center relative h-[400px] lg:h-[500px]"
+          >
             <motion.img
               src={webStudyImage.src}
               alt="Web study image"
@@ -57,11 +86,19 @@ export const About = () => {
               className="select-none absolute top-15 left-10 rotate-[-10deg]"
               style={{ translateY }}
             />
-          </div>
+          </motion.div>
 
           {/* Texto */}
           <div className="flex-1 text-center lg:text-left">
-            <div className="tag mb-4">✌️ Entenda nossa missão!</div>
+            <motion.div
+              variants={fadeInVariants("down", 0.01, 0)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.07 }}
+              className="tag mb-8"
+            >
+              ✌️ Entenda nossa missão!
+            </motion.div>
             <motion.h1
               initial="hidden"
               whileInView="reveal"

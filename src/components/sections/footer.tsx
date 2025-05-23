@@ -1,7 +1,35 @@
+"use client";
+
 import Logo from "@/assets/logo.svg";
 import SocialGitHub from "@/assets/github.svg";
 import Image from "next/image";
 import Link from "next/link";
+
+// * Libs
+import { motion, Variants } from "framer-motion";
+
+const fadeInVariants = (
+  direction: "up" | "down" | "left" | "right" | "none",
+  delay: number,
+  opacity: number
+): Variants => ({
+  hidden: {
+    opacity: opacity,
+    y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+    x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+  },
+  show: {
+    y: 0,
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      duration: 1.2,
+      delay: delay,
+      ease: [0.25, 0.25, 0.25, 0.75],
+    },
+  },
+});
 
 export const Footer = () => {
   return (
@@ -9,7 +37,13 @@ export const Footer = () => {
       id="footer"
       className="bg-black text-[#BCBCBC] text-sm py-10 text-center"
     >
-      <div className="container mx-auto px-4">
+      <motion.div
+        variants={fadeInVariants("up", 0.01, 0)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true, amount: 0.07 }}
+        className="container mx-auto px-4"
+      >
         {/* Logo + Social */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10">
           {/* Logo com efeito */}
@@ -63,7 +97,7 @@ export const Footer = () => {
         <p className="mt-6 text-xs sm:text-sm">
           &copy; 2025 Study, Inc. Todos os direitos reservados.
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 };
