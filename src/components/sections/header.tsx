@@ -59,7 +59,7 @@ export const Header = () => {
                 {/* Mobile menu */}
                 <Sheet>
                   <SheetTrigger className="cursor-pointer md:hidden shadow-2xl">
-                    <div className="shadow-2xl shadow-black rounded-lg p-1">
+                    <div className="shadow-2xl shadow-black rounded-lg p-1 bg-transparent hover:bg-white/40">
                       <Menu
                         size={32}
                         className="text-[#001E80] transition-opacity hover:opacity-85"
