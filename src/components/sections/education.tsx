@@ -93,7 +93,7 @@ export default function Education() {
     <section
       id="education"
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#EAEEFE] to-[#D2DCFF] py-16 md:py-24 overflow-x-clip"
+      className="bg-gradient-to-b from-[var(--color-education-bg-1)] to-[var(--color-education-bg-2)] py-25 overflow-x-clip"
     >
       <div className="container mx-auto px-4">
         {/* Cabeçalho de seção */}
@@ -113,12 +113,12 @@ export default function Education() {
             whileInView={"show"}
             viewport={{ once: true, amount: 0.07 }}
           >
-            <motion.h2 className="section-title mt-8 text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            <h2 className="section-title mt-8 text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-[var(--color-education-h1-2)] to-[var(--color-education-h1-1)] text-transparent bg-clip-text">
               {heading}
-            </motion.h2>
-            <motion.p className="section-description mt-5 text-lg md:text-xl text-[#010D3E] tracking-tight">
+            </h2>
+            <p className="section-description mt-5 text-lg md:text-xl text-[var(--color-education-txt)] tracking-tight">
               {text}
-            </motion.p>
+            </p>
           </motion.div>
         </div>
 
@@ -148,9 +148,10 @@ export default function Education() {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: true, amount: 0.07 }}
+          className="mb-10"
         >
           <Tabs defaultValue="faculdades" className="w-full mt-10">
-            <TabsList className="flex flex-wrap justify-center gap-2 bg-[#EAEEFE] rounded-lg shadow p-2 h-12">
+            <TabsList className="flex flex-wrap justify-center gap-2 bg-[var(--color-table-bg)] rounded-lg shadow p-2 h-12">
               <TabsTrigger
                 value="faculdades"
                 className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-4 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
@@ -172,7 +173,7 @@ export default function Education() {
             </TabsList>
 
             <TabsContent value="faculdades" className="mt-8">
-              <div className="pb-4 px-4 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
+              <div className="pb-4 px-4 shadow-black/20 shadow-xl rounded-xl bg-[var(--color-table-bg)]">
                 <div className="w-full overflow-x-auto bg-transparent rounded-xl">
                   <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 bg-transparent">
                     <DataTableCollege
@@ -185,7 +186,7 @@ export default function Education() {
             </TabsContent>
 
             <TabsContent value="empresas" className="mt-8">
-              <div className="pb-4 px-4 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
+              <div className="pb-4 px-4 shadow-black/20 shadow-xl rounded-xl bg-[var(--color-table-bg)]">
                 <div className="w-full overflow-x-auto bg-transparent rounded-xl">
                   <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 bg-transparent">
                     <DataTableCompany
@@ -198,7 +199,7 @@ export default function Education() {
             </TabsContent>
 
             <TabsContent value="cursos" className="mt-8">
-              <div className="pb-4 px-4 border shadow-black/20 shadow-xl rounded-xl border-gray-200 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#FEFEFE,#EAEEFE)]">
+              <div className="pb-4 px-4 shadow-black/20 shadow-xl rounded-xl bg-[var(--color-table-bg)]">
                 <div className="w-full overflow-x-auto bg-transparent rounded-xl">
                   <div className="min-w-[640px] sm:min-w-full p-4 sm:p-6 md:p-8 bg-transparent">
                     <DataTableCourse

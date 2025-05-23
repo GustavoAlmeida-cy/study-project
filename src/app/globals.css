@@ -43,10 +43,79 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* My theme colors */
+
+  /* Header */
+  --color-nav-txt: var(--color-nav-txt);
+  --color-nav-bg: var(--color-nav-bg);
+
+  /* Hero */
+  --color-hero-bg-1: var(--color-hero-bg-1);
+  --color-hero-bg-2: var(--color-hero-bg-2);
+  --color-hero-h1-1: var(--color-hero-h1-1);
+  --color-hero-h1-2: var(--color-hero-h1-2);
+  --color-hero-txt: var(--color-hero-txt);
+
+  /* About */
+  --color-about-h1-1: var(--color-about-h1-1);
+  --color-about-h1-2: var(--color-about-h1-2);
+  --color-about-txt: var(--color-about-txt);
+  --color-about-card-bg: var(--color-about-card-bg);
+  --color-about-card-txt: var(--color-about-card-txt);
+
+  /* Education */
+  --color-education-bg-1: var(--color-education-bg-1);
+  --color-education-bg-2: var(--color-education-bg-2);
+
+  /* Table */
+  --color-table-bg: var(--color-table-bg);
+  --color-table-txt: var(--color-table-txt);
+  --color-table-tab: var(--color-table-tab);
+
+  /* Footer */
+  --color-footer-bg: var(--color-footer-bg);
 }
 
 :root {
   --radius: 0.625rem;
+
+  /* My theme colors */
+
+  /* Header */
+  --color-nav-txt: #001e80;
+  --color-nav-bg: #fefefe;
+
+  /* Hero */
+  --color-hero-bg-1: #1832ff;
+  --color-hero-bg-2: #eaeefe;
+  --color-hero-h1-1: #001e80;
+  --color-hero-h1-2: #050505;
+  --color-hero-txt: #e5e6f1;
+
+  /* About */
+  --color-about-h1-1: #1832ff;
+  --color-about-h1-2: #050505;
+  --color-about-txt: #050505;
+  --color-about-card-bg: #fefefe;
+  --color-about-card-txt: #050505;
+
+  /* Education */
+  --color-education-bg-1: #eaeefe;
+  --color-education-bg-2: #d2dcff;
+  --color-education-h1-1: #001e80;
+  --color-education-h1-2: #050505;
+  --color-education-txt: #050505;
+
+  /* Table */
+  --color-table-bg: #eaeefe;
+  --color-table-txt: #050505;
+  --color-table-tab: #001e80;
+
+  /* Footer */
+  --color-footer-bg: #000000;
+
+  /* Default theme colors */
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -81,6 +150,42 @@
 }
 
 .dark {
+  /* My theme colors */
+
+  /* Header */
+  --color-nav-txt: #1832ff;
+  --color-nav-bg: #050505;
+
+  /* Hero */
+  --color-hero-bg-1: #001e80;
+  --color-hero-bg-2: #050505;
+  --color-hero-h1-1: #1832ff;
+  --color-hero-h1-2: #eaeefe;
+  --color-hero-txt: #e5e6f1;
+
+  /* About */
+  --color-about-h1-1: #1832ff;
+  --color-about-h1-2: #eaeefe;
+  --color-about-txt: #e5e6f1;
+  --color-about-card-bg: #0e0e0e;
+  --color-about-card-txt: #e5e6f1;
+
+  /* Education */
+  --color-education-bg-1: #050505;
+  --color-education-bg-2: #000053;
+  --color-education-h1-1: #1832ff;
+  --color-education-h1-2: #eaeefe;
+  --color-education-txt: #e5e6f1;
+
+  /* Table */
+  --color-table-bg: #050505;
+  --color-table-txt: #eaeefe;
+  --color-table-tab: #1832ff;
+
+  /* Footer */
+  --color-footer-bg: #000000;
+
+  /* Default theme colors */
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
@@ -141,7 +246,7 @@
   }
 
   .tag {
-    @apply text-sm inline-flex px-4 pl-2 py-1 rounded-lg tracking-tight shadow-black/20 shadow-md bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#EEEEFF,#EAEAFA)];
+    @apply text-black text-sm inline-flex px-4 pl-2 py-1 rounded-lg tracking-tight shadow-black/20 shadow-md bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#EEEEFF,#EAEAFA)];
   }
 
   .section-title {
@@ -169,17 +274,17 @@ html {
 ::-webkit-scrollbar {
   width: 6px; /* Barra fina */
   height: 6px; /* Barra fina */
-  background-color: white;
+  background-color: var(--color-nav-bg);
 }
 
 ::-webkit-scrollbar-track {
-  background-color: white;
+  background-color: var(--color-nav-bg);
   margin: 0;
   cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #7080fa;
+  background-color: var(--color-nav-txt);
   min-height: 64px;
   border-radius: 999px;
   margin: 0;

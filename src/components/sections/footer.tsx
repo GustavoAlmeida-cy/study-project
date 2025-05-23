@@ -35,7 +35,7 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-black text-[#BCBCBC] text-sm py-10 text-center"
+      className="bg-[var(--color-footer-bg)] text-white text-sm py-10 text-center"
     >
       <motion.div
         variants={fadeInVariants("up", 0.01, 0)}

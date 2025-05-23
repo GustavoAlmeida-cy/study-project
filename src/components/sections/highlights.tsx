@@ -39,7 +39,7 @@ export const Highlights = () => {
   return (
     <section
       id="highlights"
-      className="bg-[#EAEEFE] py-16 md:py-24 overflow-x-clip"
+      className="bg-[var(--color-hero-bg-2)] py-16 md:py-24 overflow-x-clip"
     >
       <div className="container mx-auto px-6">
         {/* Cabeçalho do bloco */}
@@ -50,7 +50,7 @@ export const Highlights = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.07 }}
-            className="tag text-indigo-700 font-semibold tracking-wide"
+            className="tag font-semibold tracking-wide"
           >
             🏆 Nosso pódio!
           </motion.div>
@@ -62,12 +62,12 @@ export const Highlights = () => {
             viewport={{ once: true, amount: 0.07 }}
           >
             {/* Título animado */}
-            <h2 className="section-title mt-8 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            <h2 className="section-title mt-8 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-[var(--color-about-h1-2)] to-[var(--color-about-h1-1)] text-transparent bg-clip-text">
               {heading}
             </h2>
 
             {/* Parágrafo animado */}
-            <p className="section-description mt-5 text-base sm:text-lg md:text-xl text-[#010D3E] tracking-tight leading-relaxed">
+            <p className="section-description mt-5 text-base sm:text-lg md:text-xl text-[var(--color-about-txt)] tracking-tight leading-relaxed">
               {text}
             </p>
           </motion.div>
@@ -86,7 +86,7 @@ export const Highlights = () => {
             }) => (
               <motion.div
                 key={name}
-                className="card max-w-sm min-h-[460px] p-6 bg-white rounded-xl shadow-lg flex flex-col justify-between items-center text-center transition-transform hover:scale-[1.03] hover:shadow-2xl"
+                className="card max-w-sm min-h-[460px] p-6 bg-[var(--color-about-card-bg)] border-0 rounded-xl shadow-lg flex flex-col justify-between items-center text-center transition-transform hover:scale-[1.03] hover:shadow-2xl"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
@@ -95,7 +95,7 @@ export const Highlights = () => {
               >
                 {/* Nome e badge */}
                 <div className="flex items-center gap-3 mb-4 justify-center flex-wrap">
-                  <h3 className="text-xl font-semibold text-[#001E80]">
+                  <h3 className="text-xl font-semibold text-[var(--color-about-h1-1)]">
                     {name}
                   </h3>
                   <span
@@ -119,7 +119,9 @@ export const Highlights = () => {
                     className="mb-6 object-contain select-none"
                     loading="lazy"
                   />
-                  <p className="text-sm text-gray-700">{description}</p>
+                  <p className="text-sm text-[var(--color-about-card-txt)]">
+                    {description}
+                  </p>
                 </div>
 
                 {/* Botão */}
@@ -127,7 +129,7 @@ export const Highlights = () => {
                   href={siteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 btn btn-primary w-full sm:w-auto px-6 py-3 rounded-md font-semibold text-white bg-[#001E80] hover:bg-[#0030b3] transition-colors"
+                  className="mt-6 btn btn-primary w-full sm:w-auto px-6 py-3 rounded-md font-semibold text-white bg-[var(--color-about-h1-1)] hover:opacity-90 transition-opacity"
                 >
                   Saiba mais
                 </a>

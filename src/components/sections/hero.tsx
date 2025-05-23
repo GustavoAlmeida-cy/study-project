@@ -37,7 +37,7 @@ const text =
 
 export const Hero = () => {
   return (
-    <section className="pt-50 pb-20 sm:pt-60 -mt-25 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#1832FF,#EAEEFE)] overflow-x-clip">
+    <section className="pt-50 pb-20 sm:pt-30 -mt-25 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,var(--color-hero-bg-1),var(--color-hero-bg-2))] overflow-x-clip">
       <div className="container mx-auto px-4">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
           {/* Texto */}
@@ -57,10 +57,10 @@ export const Hero = () => {
               whileInView={"show"}
               viewport={{ once: true, amount: 0.07 }}
             >
-              <h1 className="text-5xl md:text-8xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
+              <h1 className="text-5xl md:text-8xl font-bold tracking-tighter bg-gradient-to-b text-transparent bg-clip-text my-8 from-[var(--color-hero-h1-2)] to-[var(--color-hero-h1-1)]">
                 {heading}
               </h1>
-              <p className="text-2xl text-[#e5e6f1] tracking-tight mt-6">
+              <p className="text-2xl text-hero-txt tracking-tight mt-6">
                 {text}
               </p>
               <div className="flex justify-center md:justify-start mt-8">

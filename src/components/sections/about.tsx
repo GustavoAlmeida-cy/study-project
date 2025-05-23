@@ -47,7 +47,7 @@ export const About = () => {
     <section
       id="about"
       ref={aboutRef}
-      className="pt-12 pb-2 bg-[radial-gradient(ellipse_200%_100%_at_top_left,#1832FF,#EAEEFE)] overflow-x-clip"
+      className="py-15 bg-[radial-gradient(ellipse_200%_100%_at_top_left,var(--color-hero-bg-1),var(--color-hero-bg-2))] overflow-x-clip"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
@@ -86,10 +86,10 @@ export const About = () => {
               whileInView={"show"}
               viewport={{ once: true, amount: 0.07 }}
             >
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-[var(--color-about-h1-2)] to-[var(--color-about-h1-1)] text-transparent bg-clip-text">
                 {heading}
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-[#06103b] tracking-tight mt-6">
+              <p className="text-base sm:text-lg lg:text-xl text-[var(--color-about-txt)] tracking-tight mt-6">
                 {text}
               </p>
             </motion.div>

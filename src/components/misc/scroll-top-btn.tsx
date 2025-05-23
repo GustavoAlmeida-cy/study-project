@@ -27,7 +27,7 @@ export function ScrollTopButton() {
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-4 pointer-events-none"
         }
-        text-white hover:text-[#FEFEFE] bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#1832FF,#FEFEFE)] overflow-x-clip`}
+        text-white hover:text-[#FEFEFE] bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,var(--color-hero-bg-2),var(--color-hero-bg-1))] overflow-x-clip`}
     >
       <ArrowUp className="w-5 h-5" />
     </button>
