@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,14 +28,22 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className="bg-[#EAEEFE] w-screen h-screen p-0 m-0 !overflow-x-clip"
+      suppressHydrationWarning
+      className="w-screen h-screen p-0 m-0 !overflow-x-clip"
     >
       <body
         id="initial"
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#EAEEFE] top-0 left-0 min-h-screen absolute w-screen !overflow-x-clip`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased top-0 left-0 min-h-screen absolute w-screen !overflow-x-clip`}
       >
-        <ScrollTopButton />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ScrollTopButton />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
