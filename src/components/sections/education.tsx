@@ -172,7 +172,7 @@ export default function Education() {
                 value="empresas"
                 className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
               >
-                Empresas
+                Instituições
               </TabsTrigger>
               <TabsTrigger
                 value="cursos"
