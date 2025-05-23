@@ -80,24 +80,19 @@ export const About = () => {
             >
               ✌️ Entenda nossa missão!
             </motion.div>
-            <motion.h1
-              variants={fadeInVariants("down", 0.01, 0)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: true, amount: 0.07 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
-            >
-              {heading}
-            </motion.h1>
-            <motion.p
+            <motion.div
               variants={fadeInVariants("right", 0.01, 0)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: true, amount: 0.07 }}
-              className="text-base sm:text-lg lg:text-xl text-[#06103b] tracking-tight mt-6"
             >
-              {text}
-            </motion.p>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+                {heading}
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-[#06103b] tracking-tight mt-6">
+                {text}
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@
 - **React**: Biblioteca para construção de interfaces declarativas e reativas.
 - **TypeScript**: Superset do JavaScript com tipagem estática.
 - **Tailwind CSS**: Framework utilitário para estilização rápida e responsiva.
-- **shadcn/ui**: Conjunto moderno de componentes acessíveis e personalizáveis, construído com Tailwind CSS e Radix UI.
+- **Shadcn/ui**: Conjunto moderno de componentes acessíveis e personalizáveis, construído com Tailwind CSS e Radix UI.
 - **Framer Motion**: Biblioteca de animações para React, utilizada para transições suaves e interações visuais.
 - **Vercel**: Plataforma de hospedagem e deploy contínuo.
 

@@ -63,7 +63,7 @@ export function DataTableCompany<TData, TValue>({
 
   return (
     <div className="w-auto">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between py-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between py-4 w-70 md:w-100">
         <Input
           placeholder="Filtrar por instituição..."
           value={(table.getColumn("company")?.getFilterValue() as string) ?? ""}

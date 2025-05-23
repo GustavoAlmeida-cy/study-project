@@ -33,7 +33,7 @@ const fadeInVariants = (
 const heading =
   "Destaques das Instituições que Transformam a Educação no Brasil";
 const text =
-  "O Study conecta estudantes brasileiros às instituições e empresas que promovem uma educação gratuita, inclusiva e inovadora. Nosso compromisso é ampliar o acesso a oportunidades educacionais que moldam futuros e fortalecem o desenvolvimento do país.";
+  "O Study conecta estudantes brasileiros às instituições que promovem uma educação gratuita, inclusiva e inovadora. Nosso compromisso é ampliar o acesso a oportunidades educacionais que moldam futuros e fortalecem o desenvolvimento do país.";
 
 export const Highlights = () => {
   return (
@@ -55,27 +55,22 @@ export const Highlights = () => {
             🏆 Nosso pódio!
           </motion.div>
 
-          {/* Título animado */}
-          <motion.h2
-            variants={fadeInVariants("right", 0.01, 0)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.07 }}
-            className="section-title mt-8 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
-          >
-            {heading}
-          </motion.h2>
-
-          {/* Parágrafo animado */}
-          <motion.p
+          <motion.div
             variants={fadeInVariants("left", 0.01, 0)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.07 }}
-            className="section-description mt-5 text-base sm:text-lg md:text-xl text-[#010D3E] tracking-tight leading-relaxed"
           >
-            {text}
-          </motion.p>
+            {/* Título animado */}
+            <h2 className="section-title mt-8 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+              {heading}
+            </h2>
+
+            {/* Parágrafo animado */}
+            <p className="section-description mt-5 text-base sm:text-lg md:text-xl text-[#010D3E] tracking-tight leading-relaxed">
+              {text}
+            </p>
+          </motion.div>
         </div>
 
         {/* Cards de destaque */}
