@@ -60,7 +60,7 @@ export const Highlights = () => {
             variants={fadeInVariants("right", 0.01, 0)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.07 }}
+            viewport={{ once: true, amount: 0.07 }}
             className="section-title mt-8 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
           >
             {heading}
@@ -71,7 +71,7 @@ export const Highlights = () => {
             variants={fadeInVariants("left", 0.01, 0)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.07 }}
+            viewport={{ once: true, amount: 0.07 }}
             className="section-description mt-5 text-base sm:text-lg md:text-xl text-[#010D3E] tracking-tight leading-relaxed"
           >
             {text}
@@ -91,7 +91,7 @@ export const Highlights = () => {
             }) => (
               <motion.div
                 key={name}
-                className="card max-w-sm p-6 bg-white rounded-xl shadow-lg flex flex-col items-center text-center transition-transform hover:scale-[1.03] hover:shadow-2xl"
+                className="card max-w-sm min-h-[460px] p-6 bg-white rounded-xl shadow-lg flex flex-col justify-between items-center text-center transition-transform hover:scale-[1.03] hover:shadow-2xl"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
@@ -114,25 +114,25 @@ export const Highlights = () => {
                   </span>
                 </div>
 
-                {/* Logo da instituição */}
-                <Image
-                  src={logoUrl}
-                  alt={`${name} logo`}
-                  width={80}
-                  height={80}
-                  className="mb-6 object-contain"
-                  loading="lazy"
-                />
+                {/* Logo e descrição (conteúdo central que cresce) */}
+                <div className="flex flex-col items-center justify-center flex-grow">
+                  <Image
+                    src={logoUrl}
+                    alt={`${name} logo`}
+                    width={80}
+                    height={80}
+                    className="mb-6 object-contain select-none"
+                    loading="lazy"
+                  />
+                  <p className="text-sm text-gray-700">{description}</p>
+                </div>
 
-                {/* Descrição */}
-                <p className="text-sm text-gray-700 mb-6">{description}</p>
-
-                {/* Botão de acesso */}
+                {/* Botão */}
                 <a
                   href={siteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-primary w-full sm:w-auto px-6 py-3 rounded-md font-semibold text-white bg-[#001E80] hover:bg-[#0030b3] transition-colors"
+                  className="mt-6 btn btn-primary w-full sm:w-auto px-6 py-3 rounded-md font-semibold text-white bg-[#001E80] hover:bg-[#0030b3] transition-colors"
                 >
                   Saiba mais
                 </a>

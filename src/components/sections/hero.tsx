@@ -55,7 +55,7 @@ export const Hero = () => {
               variants={fadeInVariants("left", 0.01, 0)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.07 }}
+              viewport={{ once: true, amount: 0.07 }}
               className="text-5xl md:text-8xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6"
             >
               {heading}
@@ -64,7 +64,7 @@ export const Hero = () => {
               variants={fadeInVariants("right", 0.01, 0)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.07 }}
+              viewport={{ once: true, amount: 0.07 }}
               className="text-2xl text-[#e5e6f1] tracking-tight mt-6"
             >
               {text}
@@ -87,7 +87,7 @@ export const Hero = () => {
             variants={fadeInVariants("up", 0.01, 0)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.07 }}
+            viewport={{ once: true, amount: 0.07 }}
             className="hidden md:block w-full max-w-[500px] mx-auto md:mx-0 mt-10 md:mt-0"
           >
             <motion.img

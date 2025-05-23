@@ -111,7 +111,7 @@ export default function Education() {
             variants={fadeInVariants("left", 0.01, 0)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.07 }}
+            viewport={{ once: true, amount: 0.07 }}
             className="section-title mt-8 text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
           >
             {heading}
@@ -120,7 +120,7 @@ export default function Education() {
             variants={fadeInVariants("right", 0.01, 0)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.07 }}
+            viewport={{ once: true, amount: 0.07 }}
             className="section-description mt-5 text-lg md:text-xl text-[#010D3E] tracking-tight"
           >
             {text}
@@ -132,7 +132,7 @@ export default function Education() {
           variants={fadeInVariants("down", 0.01, 0)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.07 }}
+          viewport={{ once: true, amount: 0.07 }}
           className="relative my-12"
         >
           <motion.img

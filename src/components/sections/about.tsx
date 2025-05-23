@@ -56,7 +56,7 @@ export const About = () => {
             variants={fadeInVariants("left", 0.01, 0)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.07 }}
+            viewport={{ once: true, amount: 0.07 }}
             className="hidden lg:flex flex-1 justify-center relative h-[400px] lg:h-[500px]"
           >
             <motion.img
@@ -84,7 +84,7 @@ export const About = () => {
               variants={fadeInVariants("down", 0.01, 0)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.07 }}
+              viewport={{ once: true, amount: 0.07 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text"
             >
               {heading}
@@ -93,7 +93,7 @@ export const About = () => {
               variants={fadeInVariants("right", 0.01, 0)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.07 }}
+              viewport={{ once: true, amount: 0.07 }}
               className="text-base sm:text-lg lg:text-xl text-[#06103b] tracking-tight mt-6"
             >
               {text}
