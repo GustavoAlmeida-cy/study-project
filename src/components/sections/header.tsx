@@ -114,7 +114,7 @@ export const Header = () => {
                     </div>
 
                     {/* Separador */}
-                    <div className="flex justify-between items-center mt-6 border-t border-[#001E80]/30 pt-4"></div>
+                    <div className="flex justify-between items-center mt-6 border-t border-[#050505]/30 pt-4"></div>
                   </SheetContent>
                 </Sheet>
 

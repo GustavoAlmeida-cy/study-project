@@ -70,7 +70,7 @@ export const Notices = () => {
         </div>
 
         {/* Cards */}
-        <div className="mt-20 flex flex-col md:flex-row gap-10 justify-center items-stretch">
+        <div className="mt-20 flex flex-col md:flex-row gap-10 justify-center items-center md:items-stretch">
           {noticesData.map(
             ({
               name,
