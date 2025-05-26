@@ -7,7 +7,7 @@ const Logomark = (props: React.SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -90 1800 360"
       preserveAspectRatio="xMidYMid meet"
-      className={`fill-[#001E80] dark:fill-[#1832ff] ${props.className ?? ""}`} // Aplica fill baseado no tema
+      className={`fill-[#e37272] dark:fill-[#1832ff] ${props.className ?? ""}`} // Aplica fill baseado no tema
     >
       {/* SVG */}
       <g

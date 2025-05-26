@@ -154,19 +154,19 @@ export default function Education() {
             <TabsList className="flex flex-wrap justify-center gap-2 bg-[var(--color-table-bg)] rounded-lg shadow p-2 h-12">
               <TabsTrigger
                 value="faculdades"
-                className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-4 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
+                className="data-[state=active]:bg-[#e37272] data-[state=active]:text-white px-4 py-4 rounded-md text-[#e37272] cursor-pointer hover:opacity-90 transition-opacity"
               >
                 Faculdades
               </TabsTrigger>
               <TabsTrigger
                 value="empresas"
-                className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
+                className="data-[state=active]:bg-[#e37272] data-[state=active]:text-white px-4 py-2 rounded-md text-[#e37272] cursor-pointer hover:opacity-90 transition-opacity"
               >
                 Instituições
               </TabsTrigger>
               <TabsTrigger
                 value="cursos"
-                className="data-[state=active]:bg-[#001E80] data-[state=active]:text-white px-4 py-2 rounded-md text-[#001E80] cursor-pointer hover:opacity-90 transition-opacity"
+                className="data-[state=active]:bg-[#e37272] data-[state=active]:text-white px-4 py-2 rounded-md text-[#e37272] cursor-pointer hover:opacity-90 transition-opacity"
               >
                 Cursos
               </TabsTrigger>

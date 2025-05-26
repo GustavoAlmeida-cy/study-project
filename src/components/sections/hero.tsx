@@ -37,7 +37,7 @@ const text =
 
 export const Hero = () => {
   return (
-    <section className="pt-50 pb-20 sm:pt-30 -mt-25 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,var(--color-hero-bg-1),var(--color-hero-bg-2))] overflow-x-clip">
+    <section className="pt-60 pb-20 sm:pt-30 -mt-25 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,var(--color-hero-bg-1),var(--color-hero-bg-2))] overflow-x-clip">
       <div className="container mx-auto px-4">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
           {/* Texto */}

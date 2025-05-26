@@ -83,34 +83,34 @@
   /* My theme colors */
 
   /* Header */
-  --color-nav-txt: #001e80;
-  --color-nav-bg: #fefefe;
+  --color-nav-txt: #e37272;
+  --color-nav-bg: #f3ffff;
 
   /* Hero */
-  --color-hero-bg-1: #1832ff;
-  --color-hero-bg-2: #eaeefe;
-  --color-hero-h1-1: #001e80;
-  --color-hero-h1-2: #050505;
-  --color-hero-txt: #e5e6f1;
+  --color-hero-bg-1: #63c8c3;
+  --color-hero-bg-2: #f3ffff;
+  --color-hero-h1-1: #c47f7f;
+  --color-hero-h1-2: #e37272;
+  --color-hero-txt: #c47f7f;
 
   /* About */
-  --color-about-h1-1: #1832ff;
-  --color-about-h1-2: #050505;
-  --color-about-txt: #050505;
+  --color-about-h1-1: #e37272;
+  --color-about-h1-2: #c47f7f;
+  --color-about-txt: #c47f7f;
   --color-about-card-bg: #fefefe;
   --color-about-card-txt: #050505;
 
   /* Education */
-  --color-education-bg-1: #eaeefe;
-  --color-education-bg-2: #d2dcff;
-  --color-education-h1-1: #001e80;
-  --color-education-h1-2: #050505;
-  --color-education-txt: #050505;
+  --color-education-bg-1: #f3ffff;
+  --color-education-bg-2: #d2fffc;
+  --color-education-h1-1: #e37272;
+  --color-education-h1-2: #c47f7f;
+  --color-education-txt: #c47f7f;
 
   /* Table */
-  --color-table-bg: #eaeefe;
+  --color-table-bg: #f3ffff;
   --color-table-txt: #050505;
-  --color-table-tab: #001e80;
+  --color-table-tab: #e37272;
 
   /* Footer */
   --color-footer-bg: #000000;
