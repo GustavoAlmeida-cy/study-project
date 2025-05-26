@@ -10,8 +10,8 @@ import { Link as LinkIcon } from "lucide-react"; // renomeado para evitar confli
 export type College = {
   id: string;
   college: string;
-  type: "Estadual" | "Municipal";
-  cost: "Grátis" | "Pago";
+  type: "Estadual" | "Municipal" | "Privada" | "Federal";
+  cost: "Grátis" | "Pago" | "1º ano com bolsa 100%";
   students: string;
   entrances: string;
   quality: "⭐⭐⭐⭐⭐" | "⭐⭐⭐⭐" | "⭐⭐⭐" | "⭐⭐" | "⭐";

@@ -46,5 +46,16 @@ export async function getCollegesData(): Promise<College[]> {
       focus: "Tecnologia Aplicada, Gestão, TI",
       link: "https://www.vestibular.fatec.sp.gov.br/",
     },
+    {
+      id: "5",
+      college: "SPTECH",
+      type: "Privada",
+      cost: "1º ano com bolsa 100%",
+      students: "Não divulgado",
+      entrances: "Vestibular próprio / ENEM",
+      quality: "⭐⭐⭐",
+      focus: "Tecnologia, Computação, Sistemas",
+      link: "https://sptech.school/",
+    },
   ];
 }
