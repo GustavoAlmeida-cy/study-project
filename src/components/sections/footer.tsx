@@ -101,7 +101,11 @@ export const Footer = () => {
 
         {/* Copyright */}
         <p className="mt-6 text-xs sm:text-sm">
-          &copy; 2025 Study, Inc. Todos os direitos reservados.
+          Copyright &copy; 2025 Gustavo Almeida, Marcelo Frota, Rhayan Andrade,
+          <br></br>
+          Gustavo Pinheiro, Raphael Cristo, Davi Macedo,Thiago Nogueira,
+          <br></br>
+          Sâmily Goes. Todos os direitos reservados.
         </p>
       </motion.div>
     </footer>
