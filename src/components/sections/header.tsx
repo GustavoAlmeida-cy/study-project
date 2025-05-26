@@ -42,6 +42,12 @@ export const Header = () => {
                 </Link>
                 <Link
                   className="hover:opacity-80 transition-opacity"
+                  href="#notices"
+                >
+                  Editais
+                </Link>
+                <Link
+                  className="hover:opacity-80 transition-opacity"
                   href="#education"
                 >
                   Cursos
@@ -86,6 +92,12 @@ export const Header = () => {
                         href="#highlights"
                       >
                         Destaques
+                      </Link>
+                      <Link
+                        className="hover:opacity-80 transition-opacity"
+                        href="#notices"
+                      >
+                        Editais
                       </Link>
                       <Link
                         className="hover:opacity-80 transition-opacity"

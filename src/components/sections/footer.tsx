@@ -93,6 +93,12 @@ export const Footer = () => {
           </Link>
           <Link
             className="hover:opacity-80 transition-opacity font-bold"
+            href="#notices"
+          >
+            Editais
+          </Link>
+          <Link
+            className="hover:opacity-80 transition-opacity font-bold"
             href="#education"
           >
             Cursos
