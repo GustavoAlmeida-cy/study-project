@@ -27,6 +27,12 @@
 
 ---
 
+## 🌓 Modo Escuro
+
+O site possui suporte nativo ao **modo escuro**, adaptando-se automaticamente às preferências de tema do usuário. Isso proporciona uma experiência mais confortável em ambientes com pouca luz, além de contribuir para economia de energia em dispositivos com telas OLED.
+
+---
+
 ## 🧑‍💻 Como Rodar Localmente
 
 Clone o repositório e instale as dependências:
@@ -73,6 +79,8 @@ Contribuições são bem-vindas! Se você conhece iniciativas educacionais gratu
 
 ## 🌐 Demonstração
 
-[Acesse o site em produção](study-project-pi.vercel.app) 🔗
+[Acesse o site em produção](https://study-project-pi.vercel.app) 🔗
+
+![Demonstração geral da plataforma](./public/demos/screenshot-1.png)
 
 ---
